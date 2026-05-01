@@ -10,5 +10,15 @@
     const result = document.getElementById("result")
     button.addEventListener("click", function () {
         const randomNumber = Math.floor(Math.random() * fortunes.length)
+const resultText = fortunes[(randomNumber)]
+
+result.textContent = fortunes[(randomNumber)]
+
+if (resultText.includes("大吉")){
+    result.style.color = "red";
+
    result.textContent= fortunes[(randomNumber)];
+}else {
+    resul.style.color ="geen"
+}
     });
