@@ -6,19 +6,29 @@
         "大凶　今日は何もしないようにしよう"
     ];
 
-    const button =document.getElementById("omikuji-bt")
-    const result = document.getElementById("result")
+    const button =document.getElementById("omikuji-bt");
+    const omikujiimg = document.getElementById("omikuji-img");
+    const result = document.getElementById("result");
+    const advise = document.getElementById("advise");
+
+    
+
     button.addEventListener("click", function () {
         const randomNumber = Math.floor(Math.random() * fortunes.length)
 const resultText = fortunes[(randomNumber)]
 
-result.textContent = fortunes[(randomNumber)]
+result.textContent = fortunes[(randomNumber)];
 
 if (resultText.includes("大吉")){
     result.style.color = "red";
-
-   result.textContent= fortunes[(randomNumber)];
+    omikujiimg.innerHTML = "<img src='happy01.png'>";
+advise.textContent = "今日は積極的に行動しよう";
+}else if (resultText.includes("大凶")) {
+    result.style.color="green"
+    omikujiimg.innerHTML = "<img src='happy大凶.png'>";
 }else {
-    resul.style.color ="geen"
+    result.style.color ="black"
+    advise.textContent=""
+    omikujiimg.innerHTML = "";
 }
     });
